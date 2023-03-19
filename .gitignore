@@ -163,3 +163,9 @@ composer.phar
 ## components, libraries, etc
 ##############################
 vendor
+
+##############################
+## files with sensitive info
+##############################
+apikey
+credentials.json
