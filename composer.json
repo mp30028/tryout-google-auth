@@ -1,0 +1,21 @@
+{
+	"autoload" : {
+		"psr-4" : {
+			"tryout_google_auth\\" : "src"
+		}
+	},
+	"name" : "zonesoft/tryout-google-auth",
+	"require" : {
+		"php" : ">=7.4",
+		"monolog/monolog" : "~3.3",
+		"google/apiclient" : "~2.13.1"
+	},
+	"scripts" : {
+		"pre-autoload-dump" : "Google\\Task\\Composer::cleanup"
+	},
+    "extra": {
+        "google/apiclient-services": [
+
+        ]
+	}	
+}
