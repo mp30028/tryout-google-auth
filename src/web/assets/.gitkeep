@@ -1,0 +1,4 @@
+Two files are needed in this folder
+
+1. File named 'apikey' which needs to contain the value of the developer key created on the Google Console
+2. The credentials json file downloaded from the Google Console and renamed to credentials.json and saved here.
