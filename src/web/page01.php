@@ -25,7 +25,8 @@ if ($handler->authenticate()){
   <body>
 		<div>
 			<h3>Welcome to Page-1</h3>
-			<p><?= $message ?></p>
-		</div>      					
+			<p><?= $message ?></p>			
+		</div>
+		<div><a href='?logout'>Logout</a></div>
   </body>
 </html>

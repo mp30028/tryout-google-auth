@@ -27,6 +27,9 @@ class LoginHandler{
     }
     
     public function authenticate():bool{
+        if ($this->isLogoutRequested()){
+            return $this->doLogout();    
+        }else{
             if ($this->isAuthenticated()){
                 $this->appLogger->writeLog("Starting isAuthenticated flow");
                 return true;
@@ -37,11 +40,19 @@ class LoginHandler{
                 $this->appLogger->writeLog("Starting Login From Html flow");
                 $this->redirectToLoginHtml();
             }
+        }
     }
     
-    private function doLogout():bool{        
+    private function isLogoutRequested(){
+        return (isset($_REQUEST['logout']));
+    }
+    
+    private function doLogout():bool{
         unset($_SESSION[self::CREDENTIAL_KEY]);
         unset($_SESSION[self::USERNAME_KEY]);
+        $client = $this->getGoogleClient();
+        $client->revokeToken();
+        $this->redirectToLoginHtml();
         return true;
     }
     
